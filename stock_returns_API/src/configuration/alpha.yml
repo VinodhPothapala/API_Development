@@ -1,0 +1,34 @@
+# Accepts necessary Parameters for getAlpha Method
+openapi: 3.0.0
+tags:
+  - name: Stock Alpha
+get:
+  parameters:
+    - name: symbol
+      in: path
+      required: true
+      type: string
+      description: stock ticker
+    - name: benchmark
+      in: path
+      required: true
+      type: string
+      description: BenchMark
+    - name: from_date
+      in: query
+      required: False
+      type: string
+      description: Use format(YYYY-MM-DD)
+    - name: to_date
+      in: query
+      required: False
+      type: string
+      description: Use format(YYYY-MM-DD)
+
+responses:
+  '200':
+    description: Successful response
+  '400':
+    description: Bad Request
+  '500':
+    description: Internal Server Error

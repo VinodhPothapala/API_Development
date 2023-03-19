@@ -1,0 +1,31 @@
+# Accepts necessary Parameters for getReturns Method
+openapi: 3.0.0
+tags:
+  - name: Stock Returns
+get:
+  parameters:
+    - name: symbol
+      in: path
+      required: true
+      type: string
+      description: stock ticker
+    - name: from_date
+      in: query
+      required: false
+      type: string
+      description: YYYY-MM-DD
+    - name: to_date
+      in: query
+      required: false
+      type: string
+      description: YYYY-MM-DD
+
+
+  description: This api will return the daily returns of a given stock "Symbol" in the specified date range
+responses:
+    '200':
+      description: Successful response
+    '400':
+      description: Bad Request
+    '500':
+      description: Internal Server Error
